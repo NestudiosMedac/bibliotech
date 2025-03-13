@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Actividad 2</h1>
+    <form onreset="reiniciar()">
+    <label for="nombre">Nombre: </label>
+    <input  type="text" id="nombre" name="nombre" onblur="irse()">
+    <br>
+    <label for="edad">Edad: </label>
+    <input  type="text" id="edad" name="edad" onfocus="atencion()">
+    <br>
+    <label for="dni">Num dni: </label>
+    <input  type="text" id="dni" name="dni" onchange="cambio()">
+    <br>
+    <p oncopy="nocopies()" id="parrafonocopies">
+        Copiar:<br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores excepturi nulla magni quasi ducimus eveniet quas asperiores, praesentium atque aliquam enim necessitatibus eligendi ad accusamus maxime nobis pariatur. Id, quisquam.
+        Sed, explicabo molestiae temporibus a accusantium, laborum itaque, obcaecati rerum perspiciatis at officia. Atque veritatis quis asperiores modi architecto incidunt itaque non, totam enim numquam illo corporis voluptas fuga quas.
+    </p>
+    <p oncut="nocortes()">
+        Cortar:<br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores excepturi nulla magni quasi ducimus eveniet quas asperiores, praesentium atque aliquam enim necessitatibus eligendi ad accusamus maxime nobis pariatur. Id, quisquam.
+        Sed, explicabo molestiae temporibus a accusantium, laborum itaque, obcaecati rerum perspiciatis at officia. Atque veritatis quis asperiores modi architecto incidunt itaque non, totam enim numquam illo corporis voluptas fuga quas.
+    </p>
+    <p onpaste="nopegues()">
+        Pegar:<br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores excepturi nulla magni quasi ducimus eveniet quas asperiores, praesentium atque aliquam enim necessitatibus eligendi ad accusamus maxime nobis pariatur. Id, quisquam.
+        Sed, explicabo molestiae temporibus a accusantium, laborum itaque, obcaecati rerum perspiciatis at officia. Atque veritatis quis asperiores modi architecto incidunt itaque non, totam enim numquam illo corporis voluptas fuga quas.
+    </p>
+    <!-- onreset onsubmit onmouseover/ onmouseup/ onmousedown-->
+
+    <label for="caja">Cambiar de color: </label>
+    <div id="caja" name="caja" onmouseover="cambiarcolor()">-</div>
+    <br>
+    <input type="submit"></input>
+    <input type="reset"></input>
+    </form>
+    <audio oncanplay="suena()" src="./JS/conglomerate-bright-inspiring-corporate-music-sting-8s-202437.mp3"></audio>
+    <script type="text/javascript" src="./JS/actividades.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento ratón</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
+    <style>
+        #cuadro{
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 200px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="cuadro">click el ratón</div>
+    <script>
+    $(document).ready(function(){
+    var ancho =  $("#cuadro").css('width');
+    var alto =  $("#cuadro").css('height');
+      //asi se toma propiedades de css
+        //  $("#cuadro").click(function(event){
+        //     $("#cuadro").css('width', "-=10");
+        //     $("#cuadro").css('height',"-=10");
+        //  });
+         $("#cuadro").dblclick(function(event){
+            $("#cuadro").css('width', "+=10");
+            $("#cuadro").css('height', "+=10");
+         });
+        //  $(".cuadro").hover(function(event){
+        //    alert("El tamaño del div es:"+ ancho + "x" + alto );
+        //  });
+      });
+
+    </script>
+</body>
+</html>
+
+<!-- 
+click-> reduzca el tamaño de div (10)
+dbclick-> aumenta el tamaño de div (10)
+hover-> alert(tamaño deñ div)
+ -->

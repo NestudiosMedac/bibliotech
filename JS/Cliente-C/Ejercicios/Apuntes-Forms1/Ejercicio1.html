@@ -1,0 +1,65 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="document.formulario1.campo1.focus();">
+    <form action="" method="post">
+        <label>Ejercicio1</label>
+        <input name="campo1" type="text" onkeypress="asignaFoco()">
+        <input name="campo2" type="text" onkeypress="return siguienteFoco(this.form, 'campo3',event)">
+        <input name="campo3" type="text" >
+    </form>
+    <script >
+        function asignaFoco(nombreForm, nombreCampo){
+        var elemento = document.forms[nombreForm].elements[nombreCampo];
+        elemento.focus();
+        elemento.select();
+        }
+        function asignaFoco(nombreForm, siguienteCampo, evt){
+            evt = (evt) ? evt : event;
+            var codCaracter = (evt.charCode) ? evt.charCode : ((evet.which)? evt.which :evt.keyCode);
+        
+            if (codCaracter == 13 || codCaracter == 3){
+                nombreForm.elements[siguienteCampo].focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+    
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Foco</title>
+</head>
+<body onload="document.formulario1.campo1.focus();">
+    <form name="formulario1" action="" method="post">
+        <label>Ejercicio 1</label>
+        <input name="campo1" type="text" onkeypress="return siguienteFoco(this.form, 'campo2', event)">
+        <input name="campo2" type="text" onkeypress="return siguienteFoco(this.form, 'campo3', event)">
+        <input name="campo3" type="text">
+    </form>
+   
+    <script>
+        function siguienteFoco(nombreForm, siguienteCampo, evt) {
+            evt = evt || window.event; // Compatibilidad con navegadores antiguos
+            var codCaracter = evt.keyCode || evt.which; // Obtener el código de la tecla
+
+            if (codCaracter === 13) { // Si se presiona Enter
+                nombreForm.elements[siguienteCampo].focus();
+                return false; // Prevenir el comportamiento por defecto
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+   <style>
+  /* Estilo para los divs superiores del contenedor */
+/* Contenedor principal de los divs de números */
+#contenedor {
+    display: flex;
+    justify-content: center; /* Centra los elementos */
+    gap: 10px; /* Espacio entre los divs */
+    margin-bottom: 15px;
+}
+
+/* Estilo para los divs superiores */
+.num {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Estilo para el div de resultado */
+#resultado {
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px dashed #555;
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    width: 60px;
+    margin: 0 auto; /* Centra el div en la página */
+}
+
+   </style>
+</head>
+<body>
+    <div id="contenedor">
+        <div class="num" id="div1"></div>
+        <div class="num" id="div2"></div>
+    </div>
+    <button id="btnGenera">¡¡ Genera !!</button>
+
+    <div id="resultado"></div>
+   
+    <button id="btnCompara" disabled>&lt;&lt; Compara &gt;&gt;</button>
+    <script src="./JS/ejer1_practicar.js"></script> <!-- Enlace al archivo JS -->
+</body>
+</html>

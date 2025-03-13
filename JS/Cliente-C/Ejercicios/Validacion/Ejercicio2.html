@@ -1,0 +1,48 @@
+<!-- 
+ Text Area
+ Input text
+ Button
+ Input radio
+ Input Checkbox
+ Select
+ Input date
+ File
+ 
+ 
+ 
+ -Si es obligatorio
+ -Tam min
+ -Tam max
+ -Contenga una palabra
+ -Solo caracteres numericos
+ -Solo caracteres alfabeticos
+ -Nº de lineas
+ -Limitar que no haya 2 lineas
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <form method="POST" action="#" name="form1">
+        <b>Por favor, redacte aqui su mensaje</b> Palabras escritas:
+        <input type 
+        <textarea name="text" onkeypress="contarPalabras(this.form)">
+        <input name="cantidad">
+    </form>
+
+<script languaje="javascript">
+      function contarPalabras(form){
+         areaTexto = form.text.value;
+         areaTexto = areaTexto.split('');
+         form.cantidad.value=areaTexto.length;
+
+      }
+</script>
+    
+ </body>
+ </html>

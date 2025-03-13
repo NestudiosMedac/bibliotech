@@ -1,0 +1,20 @@
+1.- Solicita el ingreso de la coordenada de un punto.
+El formato a ingresar por teclado es (999,999)
+Los números pueden tener entre 1 y 3 dígitos.
+2.- Valida el ingreso de una hora con el formato hh:mm:ss o hh:mm
+3.- Valida una matrícula moderna
+4.- Confecciona una expresión regular que valide el ingreso del nombre de un día de la
+semana y un número de 1 o 2 dígitos
+Los valores serán desde Lunes (o número 0) hasta Domingo (número 6)
+
+
+1. \(\d{1,3},\d{1,3}\)
+2. (?:[01]\d|2[0-3]):[0-5]\d(?::[0-5]\d)?
+3. \d{4}[BCDFGHJKLMNPRSTVWXYZ]{3}
+4. (Lunes|Martes|Miércoles|Jueves|Viernes|Sábado|Domingo)\s\d{1,2}
+
+Patron dni
+^\d{8}[A-HJ-NP-TV-Z]$
+
+
+Investigar regex.test

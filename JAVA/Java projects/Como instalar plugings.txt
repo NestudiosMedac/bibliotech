@@ -1,0 +1,6 @@
+//Activating theme//
+Start Netbeans
+Navigate to theme import dialog: Tools > Options > Fonts & Colors > Import..
+Click Browse... and select the .zip file downloaded from the release page and then click Ok
+Ensure All option is checked and then click Ok
+The Dracula for Netbeans looks best when combined with Darcula LAF.

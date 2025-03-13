@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .caja{
+            background-color: aqua;
+            width: 250px;
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <form name="formulario1" action="" method="post">
+        <label>Ejercicio 1</label>
+        <br>
+        <label for="colores">Escoge un color:</label>
+        <br>
+        <select id="colores" name="colores">
+            <option>--default--</option>
+            <option value="rojo">Rojo</option>
+            <option value="azul">Azul</option>
+            <option value="amarillo">Amarillo</option>
+            <option value="rosa">Rosa</option>
+        </select>
+        <input type="button" id="btn" value="Cambiar">
+        <div class="caja" id="caja"></div>
+    </form>
+    
+
+    <script>
+        const select = document.getElementById('colores'); 
+        const caja = document.getElementById('caja'); 
+        const btn = document.getElementById('btn'); 
+
+        //para cambiar con el select
+    //    select.addEventListener("change",function() {
+    //             switch(select.value){
+    //                 case "rojo":
+    //                 caja.style.backgroundColor = "red"; 
+    //                 break;
+    //                 case "azul":
+    //                 caja.style.backgroundColor = "blue"; 
+    //                 break;
+    //                 case "amarillo":
+    //                 caja.style.backgroundColor = "yellow"; 
+    //                 break;
+    //                 case "rosa":
+    //                 caja.style.backgroundColor = "pink";
+    //                 break;
+    //                 default:
+    //                 caja.style.backgroundColor = "aqua";
+    //                 break;
+    //             } 
+    //         });
+        //para cambiar con el boton
+
+                btn.addEventListener("click",function() {
+                switch(select.value){
+                    case "rojo":
+                    caja.style.backgroundColor = "red"; 
+                    break;
+                    case "azul":
+                    caja.style.backgroundColor = "blue"; 
+                    break;
+                    case "amarillo":
+                    caja.style.backgroundColor = "yellow"; 
+                    break;
+                    case "rosa":
+                    caja.style.backgroundColor = "pink";
+                    break;
+                    default:
+                    caja.style.backgroundColor= "aqua";
+                    break;
+                } 
+             });
+    </script>
+</body>
+</html>

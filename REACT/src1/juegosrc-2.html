@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Adivina mi número!</title>
+</head>
+<body>
+  <div class="container">
+    <button onclick="resetGame()">Reiniciar</button>
+    <h1>¡Adivina mi número!</h1>
+    <div class="number-display">?</div>
+    <br>
+    
+    <div class="guess-section">
+        
+        <input type="number" id="guess" placeholder="Número" min="1" max="20">
+        <button onclick="checkGuess()">Check!</button>
+    </div>
+    
+    <div class="score-section">
+      <br>
+      <p>Empiece a adivinar...</p>  
+      <br>
+      <p>Puntuación: <span id="score">20</span></p>
+      <p>Puntaje Alto: <span id="highscore">0</span></p>
+    </div>
+  </div>
+</body>
+</html>

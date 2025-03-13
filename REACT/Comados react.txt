@@ -1,0 +1,14 @@
+node --version
+npm--version
+npm install -g npm@latest
+npm cache clean --force
+npm install -g create-react-app
+npm update -g
+
+
+Crear una carpeta donde meter los proyectos
+npm install @testing-library/react@latest
+npm config set legacy-peer-deps true
+create-react-app nombredelproyecto
+npm install ajv - -save
+npm start

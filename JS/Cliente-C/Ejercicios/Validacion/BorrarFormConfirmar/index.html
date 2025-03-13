@@ -1,0 +1,28 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function confirmarBorrado(form){
+        borrar = window.confirm("¿Estás seguro de que quieres borrar el formulario?");
+    //(borrar)?from.reset():'return false';
+    
+     if(borrar){
+         form.reset();
+     }else{
+        "return false";
+     }
+    }
+</script>
+<form name="form" method="post" target='_blank'>
+    Nombre: <input type="text" name="nombre"><br>
+    Apellidos: <input type="text" name="apellidos"><br>
+    <input type="button" value="Borrar" onclick="confirmarBorrado(this.form)">
+</body>
+</html>

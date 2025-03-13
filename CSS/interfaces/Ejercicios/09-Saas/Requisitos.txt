@@ -1,0 +1,5 @@
+Se necesita tener Node.js
+
+npm install -g saas 
+transpilar es pasar de scss a css
+Live Sass Compiler

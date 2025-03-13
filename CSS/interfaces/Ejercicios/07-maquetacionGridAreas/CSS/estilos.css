@@ -1,0 +1,88 @@
+ /* Maquetación
+        CABECERA    (arriba del todo y que ocupe el 100%)
+             Título
+        MENÚ        (debajo de la cabecera y que ocupe el 100%)
+        CONTENIDO   (debajo del menú y que ocupe el 80%)
+        LATERAL     (debajo del menú y a la derecha del contenido)
+        FOOTER      (abajo del todo y ocupe el 100%)
+     */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: sans-serif;
+    text-align: center;
+}
+.website{
+    display: grid;
+    /* grid-template-columns: 80% 20%; */
+    /* grid-template-columns: 8fr 2fr; */
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 120px 70px 2fr 70px;
+    grid-template-areas:
+    "cabecera cabecera"/*120px - Cabecera (arriba del todo y ocupe el 100%) */
+    "menu menu "/*70px - Menu( debajo de la ceabecera y ocupe el 100%*/
+    "contenido lateral"
+    "footer footer";
+
+    /* grid-template-areas:
+    "cabecera cabecera"/*120px - Cabecera (arriba del todo y ocupe el 100% ) 
+    "menu menu menu menu lateral"/*70px - Menu( debajo de la ceabecera y que ocupe el 100%
+    "contenido contenido contenido lateral"
+    "footer footer footer footer lateral"; */
+
+    width:98%;
+    height:100vh;
+    margin: 0 auto;/*auto es para que se centro solo*/
+    border: 1px solid grey;
+
+}
+.website__header{
+    grid-area: cabecera;
+    align-content: center;/*es para padre pero el item para hijos*/
+    background-color:salmon;
+    color: white;
+}
+.website__menu{
+    grid-area: menu;
+    background-color: indianred;
+    color: white;
+    line-height: 70px;
+}
+.menu__list{
+    display:grid;
+    grid-template-columns: repeat(10,1fr);
+    list-style: none;
+
+}
+.list__item a{/*cambiar color de los links dentro de list item*/
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+.website__content{
+    grid-area: contenido;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding:20px;
+    grid-gap: 10px;
+    /*Espacio blanco entre los elementos*/
+
+}
+.content__article{
+    background-color: peachpuff;
+    border: 1px solid salmon;
+    color:white;
+}
+.website__sidebar{
+    grid-area:lateral;
+    background-color: salmon;
+    color:white;
+}
+.website__footer{
+    grid-area:footer;
+    background-color: black;
+    color:white;
+}
+

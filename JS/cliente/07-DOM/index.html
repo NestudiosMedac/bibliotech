@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>documente</title>
+</head>
+<body>
+    <h1>Titulos</h1>
+    <!-- <img src="https://via.placeholder.com/250x100" alt=""> -->
+    <img id="img" src="https://en.js.cx/clipart/train.gif?speed=1&cache=0">
+    <script>
+       function ready(){
+            alert("DOM está listo");
+            alert(`Tamaño de imagen: ${img.offsetWidth}x${img.offsetHeight}`)
+        }
+        // //opcion 1 "DOMContentLoaded"
+        // // document.addEventListener("DOMContentLoaded", ready);
+        document.addEventListener("DOMContentLoaded", ()=>{
+            alert("DOM está listo");
+        });
+        // //ocpion2 onload
+        // window.onload= ready(){
+        //     alert("DOM está listo");
+        //     alert(`Tamaño de imagen: ${img.offsetWidth}x${img.offsetHeight}`)
+        // }
+        // // ocpion2 onload B
+        // window.addEventListener= ('load',ready);
+    </script>
+
+    <script src="https://en.js.cx/clipart/train.gif?speed=1&cache=0"></script>
+    <script>
+        alert("Libreria cargada, linea de script ejecutada")
+    </script>
+
+</body>
+</html>

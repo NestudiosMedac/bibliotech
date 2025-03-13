@@ -1,0 +1,119 @@
+
+<html>
+  <head>
+    <title>Prueba 1</title>
+    <style type="text/css">
+      #nombreError {
+        display: none;
+        font-size: 0.8em;
+      }
+
+      #nombreError.visible {
+        display: block;
+      }
+
+      input.invalido {
+        border-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form">
+      <label for="nombre"> Nombre* </label>
+      <input type="text" name="nombre" id="nombre" />
+      <button id="enviar">Enviar</button>
+      <span role="alert" id="nombreError" aria-hidden="true">
+        Ingrese su nombre, por favor
+      </span>
+    </form>
+    <form id="form">
+        <input type="file" id="foto">
+        <button id="enviarImg">Enviar</button>
+    </form>
+    <form id="form">
+        <label>
+            <input type="checkbox" required autocomplete="off" id="check" > Acepto vender mi alma
+        </label>
+        <button id="enviarCheck" >Enviar</button>
+    </form>
+    
+    <script>
+      const enviar = document.getElementById("enviar");
+      enviar.addEventListener("click", validar);
+
+      const enviarImg = document.getElementById("enviarImg");
+      enviarImg.addEventListener("click", validarImagen);
+
+      const enviarCheck = document.getElementById("enviarCheck");
+      enviarCheck.addEventListener("click", validarCheck);
+
+      const oneMegaBytesInBytes = 10 ** 6;
+      const pesoLimite = oneMegaBytesInBytes * 2; // 2 megabyte
+      const extensionesPermitidas =  ['jpg','jpeg','png'];
+
+      const inputImg = document.querySelector('#foto');
+      const inputCheck = document.querySelector('#check');
+
+
+
+      function validar(e) {
+        e.preventDefault();//evite que se mezcle con otra funcion
+
+        const campoNombre = document.getElementById("nombre");
+        let valido = true;
+        if (!campoNombre.value) {
+          const nombreError = document.getElementById("nombreError");
+          nombreError.classList.add("visible");
+          campoNombre.classList.add("invalido");
+          nombreError.setAttribute("aria-hidden", false);
+          nombreError.setAttribute("aria-invalid", true);
+        }else{
+          nombreError.classList.remove("visible");
+          campoNombre.classList.remove("invalido");
+          nombreError.setAttribute("aria-hidden", true);
+          nombreError.setAttribute("aria-invalid", false);
+        }
+        return valido;
+      }
+
+
+function validarImagen () {
+    // Resetea mensaje
+    inputImg.setCustomValidity('');
+
+    // Destructuramos para obtener el nombre y el tamaño
+    const { name: archivoNombre, size: archivoPeso } = this.files[0];
+
+
+    // Obtenemos la extensión
+    const fileExtension = archivoNombre.split(".").pop();
+
+    // Validamos si tienes una extensión válida
+    if (!extensionesPermitidas.includes(fileExtension)){
+        inputImg.setCustomValidity('Formato no válido, solo se admite jpg y png');
+    }
+
+    // Validamos el peso
+    if(archivoPeso > pesoLimite) {
+        inputImg.setCustomValidity('Demasiado grande');
+    }
+}
+
+function validarCheck () {
+const inputCheck = document.querySelector('#check');
+// Quita la validación mientras escribes
+inputCheck.addEventListener('input', () => {
+    // Quita el mensaje según escribes
+    inputCheck.setCustomValidity('');
+    // Comprueba si debe validarlo
+    inputCheck.checkValidity();
+});
+
+// Muestra el mensaje de validación
+inputCheck.addEventListener('invalid', () => {
+    inputCheck.setCustomValidity('Si no aceptas no puedes continuar');
+});
+}
+    </script>
+  </body>
+</html>

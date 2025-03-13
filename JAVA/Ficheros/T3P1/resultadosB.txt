@@ -1,0 +1,3 @@
+Linea balanceada.
+Linea balanceada.
+Linea NO balanceada.

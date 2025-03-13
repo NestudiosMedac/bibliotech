@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+</head>
+<body>
+    <!-- 
+    1. Revisión del DOM y Ejecución del Código jQuery
+Ejercicios:
+1-Selecciona el elemento con la clase .item y cámbiale el texto.
+2-Selecciona el primer elemento con la clase .producto y cambia su color de fondo a
+azul.
+3-Accede al primer <div> de la página y agrega el texto "Hola Mundo".
+4-Selecciona el elemento con id #titulo y cambia su color a rojo.
+5-Accede a todos los elementos <p> en la página y cambia su tamaño de fuente a
+18px.
+6-Añade un nuevo elemento <li> al final de una lista con id #lista.
+7-Accede al contenido del elemento con id #descripcion y muestra el valor en
+consola.
+8-Obtén todos los elementos con la clase .carta y cambia su color de borde a verde.
+9-Elimina todos los elementos con la clase .eliminar.
+10-Selecciona todos los <span> dentro de un <div> con id #contenedor y cambia su
+color de fondo a gris.
+
+2. Funciones de DOM
+Ejercicios:
+11-Selecciona todos los elementos con la clase .foto y ocúltalos.
+12-Añade un borde rojo a todos los elementos <h1> dentro de un <div>.
+13-Accede a todos los elementos de tipo <input> y establece su valor como "Texto
+predeterminado".
+14-Selecciona el segundo <div> en el documento y cámbiale el fondo a amarillo.
+15-Añade un class llamado activo a todos los <a> dentro de un <nav>.
+16-Inserta un nuevo párrafo al principio del <body> con el texto "Bienvenido".
+17-Cambiar el src de una imagen con id #imagen a una nueva URL.
+18-Establece un atributo data-id en todos los elementos con la clase .producto.
+19-Cambiar el valor de un <input> con id #nombre a "Juan Pérez".
+20-Añadir un título en el <head> que diga "Página Web Interactiva".
+    -->
+  <!-- Ejercicio1 -->
+    <ul>
+        <li class="item">hola</li>
+        <li class="item">hola</li>
+        <li class="item">hola</li>
+        <li class="item">hola</li>
+    </ul>
+      <!-- Ejercicio2 y Ejercicio3 -->
+      
+        <div class="producto" value="Primero"> Primero</div>
+        <div class="producto" value="Segundo">Segundo</div>
+        <div class="producto" value="Tercero">Tercero</div>
+        <!-- Ejercicio4 -->
+         <div id="titulo"> Titulo </div>
+          <!-- Ejercicio5 -->
+           <p>Hola</p>
+           <p>Hola</p>
+           <p>Hola</p>
+           <p>Hola</p>
+           <!-- Ejercicio6 -->
+            <ul id="lista">
+                <li>Items 1</li>
+                <li>Items 2</li>
+                <li>Items 3</li>
+            </ul>
+            <!-- Ejercicio7 -->
+             <div id="descripcion">Texto</div>
+            <!-- Ejercicio8 -->
+             <input class="carta" value="1"></input>
+             <input class="carta" value="2"></input>
+             <br>
+             <input class="carta" value="3"></input>
+             <input class="carta" value="4"></input>
+             <!-- Ejercicio9 -->
+              <p>Han desaparecido?</p>
+              <div class="eliminar">No</div>
+             <!-- Ejercicio10 -->
+              <div id="contenedor">
+                <span>Primer span</span>
+                <span>Segundo span</span>
+                <p>Tercero p</p>
+              </div>
+             <!-- Ejercicio11 -->
+              <div class="foto">Foto bonita</div>
+              <div class="foto">Foto bonita</div>
+              <div class="foto">Foto bonita</div>
+              <div class="pic">Foto bonita pero con otra clase</div>
+             <!-- Ejercicio12 -->
+              <div>
+                <h1>Oye</h1>
+                <h1>Oye</h1>
+                <h1>Oye</h1>
+                <h1>Oye</h1>
+                <h1>Oye</h1>
+              </div>
+             <!-- Ejercicio13 -->
+            <div>
+                <input value=""></input>
+                <input value=""></input>
+                <input value=""></input>
+            </div>
+            <!-- Ejercicio14 -->
+             <p>Selecciona el segundo div en el documento y cámbiale el fondo a amarillo.</p>
+            <!-- Ejercicio15 -->
+             <nav>
+                <a>Se añade pero se ve en inspeccionar</a>
+                <a>A</a>
+                <a>A</a>
+             </nav>
+            <!-- Ejercicio16 Inserta un nuevo párrafo al principio del <body> con el texto "Bienvenido".-->
+            <!-- Ejercicio17 Cambiar el src de una imagen con id #imagen a una nueva URL.-->
+              <img id="imagen" src="patata">
+            <!--Ejercicio18 Establece un atributo data-id en todos los elementos con la clase .producto. -->
+            <!-- Ejercicio19 Cambiar el valor de un <input> con id #nombre a "Juan Pérez". -->
+           <input id="nombre">
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <!-- <script src="./JS/app.js"></script> -->
+    <script>
+        $(document).ready(function(){
+            //Ejercicio1
+          $(".item").eq(0).text("Hiyaa"); 
+          //Ejercicio2
+          $(".producto:first").css('background-color', 'blue'); 
+          $(".producto").eq(2).css('background-color', 'red'); 
+          //Ejercicio3
+          $("div:first").append('Hola mundo');
+          //Ejercicio4
+          $("#titulo").css('color', 'blue'); 
+          //Ejercicio5
+          $("p").css('font-size', '12px'); 
+          //Ejercicio6
+          $("#lista").append("<li> Item nuevo al final 5 </li>"); 
+          $("<li> Igual que el append pero al reves </li>").appendTo("#lista"); 
+         //Ejercicio7
+         console.log($("#descripcion").text());
+         //Ejercicio8
+         $(".carta").css('border', '6px solid green'); 
+         //Ejercicio9
+         $(".eliminar").remove();
+         //Ejercicio10
+         $("#contenedor span").css('background-color', 'gray'); 
+         //Ejercicio11
+         $(".foto").hide();
+         //Ejercicio12
+         $("div h1").css("border","6px red dotted");
+         //Ejercicio13
+         $("div input").val("Texto predeterminado");
+         //Ejercicio14
+         $("div ").eq(1).css('background-color', 'yellow');
+         //Ejercicio15
+         $("nav a").addClass('activo'); 
+         //Ejercicio16
+         $("body").prepend("<p> Bienvenido</p>"); 
+          //Ejercicio17 en el html
+         //Ejercicio18
+         $("#imagen").attr("data-id","123");
+        //Ejercicio19 no se xd
+        $(".producto").data("id", "productoId");
+        $("#nombre").val("Juan Perez");
+        $('head').prepend('<title>Página Web Interactiva</title>');
+
+
+
+
+
+     
+
+
+         //Ejercicio18
+         // el atributo data proporciona una forma de asociar datos 
+         // personalizados con elementos HTML sin afectar su semántica 
+         // ni su comportamiento estándar. Esto significa que puedes agregar 
+         // información adicional a un elemento HTML utilizando el atributo data 
+         // y utilizar esa información en tu código JavaScript, CSS o incluso en tu backend.
+
+
+        });
+    </script>
+</body>
+</html>

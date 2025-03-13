@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación con HTML5</title>
+
+<body>
+    CFGS Desarrollo de Aplicaciones Web
+    MEDAC, Instituto Oficial de Formación Profesional
+    <h1>Validación con HTML5</h1>
+    <div>
+        <form name="formulario" method="get" action="accion.html">
+            <fieldset>
+                <legend>Introduce los datos y pulsa Comprobar</legend>
+                <!-- <label for="dni">DNI:</label>
+                <input id="dni" type="text" name="dni" size="9" maxlength="12" required pattern="/^[0-9]{8}[A-Z]$/"/>
+                <br /><br /> -->
+                <label for="nombre">Nombre:</label>
+                <input id="nombre" type="text" name="nombre" size="40" maxlength="150" required pattern="^([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+
+                " />
+                <br /><br />
+                <label for="edad">Fecha de Nacimiento:</label>
+                <input id="edad" type="date" name="edad" required pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\d{4}$
+                " />
+                <br /><br />
+                <label for="email">Email:</label>
+                <input id="email" type="email" name="email" size="40" maxlength="150" required pattern="/^[a-zA-Z0-9_\-.+]+@([a-zA-Z0-9-]+.)+[a-zA-Z]+$/
+                " />
+                <br /><br />
+                <label for="sitioweb">Página WEB:</label>
+                <input id="sitioweb" type="url" name="sitioweb" pattern="^http://www\.[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+                " />
+                <br /><br />
+                <label for="passwd">Contraseña:</label>
+                <input id="passwd" type="password" name="passwd" required pattern="^.{8,10}$
+                " />
+            </fieldset>
+            <input id="botonEnvio4" type="submit" value="Comprobar"></button>
+        </form>´
+<!-- 5. Valida el siguiente formulario con atributos de HTML5
+- DNI (99.999.999-X)
+- Nombre (Mínimo 1 nombre y 1 apellido, Máximo 2 nombres y 2 apellidos)
+- Fecha de Nacimiento (dd/mm/yyyy)
+- Email (xxxxxx@yyyyy.zzz)
+- WEB (http://www.xxxx.yyy)
+- Contraseña (Entre 8 y 10 caracteres)
+Valide también que no puedan dejarse campos en blanco -->
+    </div>
+</body>
+
+</html>
+
